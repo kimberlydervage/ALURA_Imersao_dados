@@ -12,7 +12,7 @@ st.set_page_config(
 
 
 # --- Carregamento dos dados ---
-df = pd.read_csv("https://raw.githubusercontent.com/vqrca/dashboard_salarios_dados/refs/heads/main/dados-imersao-final.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/vqrca/dashboard_salarios_dados/main/dados-imersao-final.csv")
 
 # --- Título e Descrição ---
 st.title("📊 Dashboard de Salários na Área de Dados")
@@ -116,17 +116,18 @@ with col_graf3:
         remoto_contagem.columns = ['tipo_trabalho', 'quantidade']
         grafico_remoto = px.pie(
             remoto_contagem,
-            names='tipo_trabalho',
-            values='quantidade',
-            title='Proporção dos tipos de trabalho',
+            names="tipo_trabalho",
+            values="quantidade",
+            title="Proporção dos tipos de trabalho",
             hole=0.5,
-            color='tipo_trabalho',
+            color="tipo_trabalho",
             color_discrete_map={
-                'presencial': '#082157',
-                'remoto': '#1E3A8A',
-                'hibrido': '#9CA3AF'
+                "presencial": "#082157",
+                "remoto": "#1E3A8A",
+                "hibrido": "#9CA3AF"
     }
-        )
+)
+
         grafico_remoto.update_traces(textinfo='percent+label')
         grafico_remoto.update_layout(title_x=0.1)
         
