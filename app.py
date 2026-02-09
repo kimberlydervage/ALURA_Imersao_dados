@@ -115,18 +115,19 @@ with col_graf3:
         remoto_contagem = df_filtrado['remoto'].value_counts().reset_index()
         remoto_contagem.columns = ['tipo_trabalho', 'quantidade']
         grafico_remoto = px.pie(
-            remoto_contagem,
-            names="tipo_trabalho",
-            values="quantidade",
-            title="Proporção dos tipos de trabalho",
-            hole=0.5,
-            color="tipo_trabalho",
-            color_discrete_map={
-                "presencial": "#082157",
-                "remoto": "#1E3A8A",
-                "hibrido": "#9CA3AF"
-    }
-)
+        remoto_contagem,
+        names="tipo_trabalho",
+        values="quantidade",
+        title="Proporção dos tipos de trabalho",
+        hole=0.5,
+        color="tipo_trabalho",
+        color_discrete_map={
+            "presencial": "#082157",
+            "remoto": "#1E3A8A",
+            "hibrido": "#9CA3AF"
+        }
+    )
+
 
         grafico_remoto.update_traces(textinfo='percent+label')
         grafico_remoto.update_layout(title_x=0.1)
